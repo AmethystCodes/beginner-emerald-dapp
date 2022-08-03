@@ -1,0 +1,40 @@
+{
+	"emulators": {
+		"default": {
+			"port": 3569,
+			"serviceAccount": "emulator-account"
+		}
+	},
+	"contracts": {
+    "HelloWorld": "./flow/cadence/contracts/HelloWorld.cdc",
+    "Fruit": "./flow/cadence/contracts/Fruit.cdc"
+  },
+	"networks": {
+		"emulator": "127.0.0.1:3569",
+		"mainnet": "access.mainnet.nodes.onflow.org:9000",
+		"testnet": "access.devnet.nodes.onflow.org:9000"
+	},
+	"accounts": {
+		"emulator-account": {
+			"address": "f8d6e0586b0a20c7",
+			"key": "8114e77633e63691a0c702a251ffc0217ae5e5ace3ff09b0aaf074e680f879c8"
+		},
+    "testnet-account": {
+      "address": "e5ac316a97a507dc",
+			"key": {
+        "type": "hex",
+        "index": 0,
+        "signatureAlgorithm": "ECDSA_P256",
+        "hashAlgorithm": "SHA3_256",
+        "privateKey": "dc2e90a976d9c7ec0066da80eef5b5d524d6c745841496d3a1be6ae9ec0ade2f"
+      }
+    }
+	},
+	"deployments": {
+    "testnet": {
+      "testnet-account": [
+        "HelloWorld"
+      ]
+    }
+  }
+}
